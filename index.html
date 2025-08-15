@@ -5,7 +5,7 @@
 
     <!--Website name coming-->
     <title>
-        Home -
+        Home - Pocket Arcade
     </title>
 
     <!--links to css and js-->
@@ -19,16 +19,18 @@
     <!--font-->
     <link href='https://fonts.googleapis.com/css?family=Aref Ruqaa' rel='stylesheet'>
 
+    <!--icon for responsive navbar-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
     <!--navigation bar with dropdown/burger for game list. logo might be added later on-->
     <header>
-        <div class="nav">
+        <div class="nav" id="myNav">
             <a href="index.html" class="item">Home</a>
 
-            <div class="dropdown">
+            <div class="dropdown" class="item">
                 <button class="dropbtn">Games</button>
                 <div class="dropContent">
                     <a href="#game1">Tic-Tac-Toe</a>
@@ -41,6 +43,10 @@
             <a href="index.html#about" class="item">About Me</a>
 
             <a href="#contact" class="item">Contact Me</a>
+
+
+            <!--apparament c le icon de hamburger navbar-->
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
     </header>
 
@@ -54,7 +60,7 @@
             -portfolio?
         -->
 
-        <section class="about_website">
+        <section class="about_website" id="fadebackground">
             <p class="title">
                 Welcome to your personal Pocket Arcade
             </p>
@@ -74,8 +80,19 @@
         </section>
 
 
-        <section class="about_me" id="about">
+        <section class="about_me_section" id="about">
+            <h1 class="subtitle">About the creator</h1>
+            <div class="about_me">
+                <div>
+                    <img src="me.jpeg" alt="Abdullah Bhatti" class="myImage">
+                </div>
 
+
+                <div class="me_object2">
+                    <p class="about_text_litteraly">About</p>
+                    <h1 class="Me">Intermediate Level Traditional/Digital Artist & Beginner Programmer</h1>
+                </div>
+            </div>
         </section>
 
 
@@ -85,36 +102,51 @@
     <!--Contacts-->
     <footer id="contact" class="bottom_page">
         <p>© 2025 copyright
-                <table class="center">
-                    <tr>
-                        <th>Contact me</th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="mailto:09.abullah.bhatti@gmail.com" class="contacts">09.abdullah.bhatti@gmail.com</a><!--my email-->
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="tel:+14388557684" class="contacts">+1 (438)-855-7684</a><!--my phone number-->
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.tiktok.com/@batdullah" target="_blank">
-                                <img src="tiktok.png" alt="tiktok" width="30"><!--my tiktok-->
-                            </a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.instagram.com/batdoul/" target="_blank">
-                                <img src="insta.webp" alt="instagram" width="40"><!--my instagram-->
-                            </a>
-                        </th>
-                    </tr>
-                </table>
-                </p>
+        <table class="center">
+            <tr>
+                <th>Contact me</th>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <a href="mailto:09.abullah.bhatti@gmail.com"
+                        class="contacts">09.abdullah.bhatti@gmail.com</a><!--my email-->
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <a href="tel:+14388557684" class="contacts">+1 (438)-855-7684</a><!--my phone number-->
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <a href="https://www.tiktok.com/@batdullah" target="_blank">
+                        <img src="tiktok.png" alt="tiktok" width="30"><!--my tiktok-->
+                    </a>
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <a href="https://www.instagram.com/batdoul/" target="_blank">
+                        <img src="insta.webp" alt="instagram" width="40"><!--my instagram-->
+                    </a>
+                </th>
+            </tr>
+
+
+        </table>
+        </p>
 
     </footer>
 
