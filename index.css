@@ -1,6 +1,7 @@
 /*navigation bar*/
 body {
     margin: 0;
+    background-color: #feecd4;
 }
 
 .nav {
@@ -10,7 +11,7 @@ body {
     top: 0;
     width: 100%;
     background-color: bisque;
-    opacity:1;
+    opacity: 1;
 }
 
 .item {
@@ -31,7 +32,9 @@ body {
     transition-duration: 0.5s;
 }
 
-
+.nav .icon {
+  display: none;
+}
 
 
 
@@ -95,6 +98,7 @@ body {
     .nav {
         position: static;
     }
+
     .item {
         float: none;
         text-align: center;
@@ -119,6 +123,8 @@ body {
 }
 
 
+
+
 /*Home page*/
 
 /*About website*/
@@ -128,7 +134,7 @@ body {
     text-align: left;
     padding-left: 12%;
     padding-bottom: 15%;
-    background-image: url('kawaii.wallpaper.jpg');
+    background-image: url('kawaii.wallpaper2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -136,15 +142,18 @@ body {
 }
 
 
+
+
 .title {
+    color: black;
     font-weight: bolder;
     font-size: 3em;
     margin: 0;
     font-family: 'aref ruqaa';
-    color: rgba(0, 0, 0, 1);
 }
 
 .tagline {
+    color: black;
     font-style: italic;
     font-size: 2em;
     font-family: 'aref ruqaa';
@@ -153,18 +162,21 @@ body {
 }
 
 .aboutweb_text {
+    color: black;
     width: 70%;
+    font-size: 1.1em;
 }
+
 
 /*resize for phones for better feel (not the best but i cant quite figure out why)
 It might just not translate well for phone the way i made the site*/
 @media screen and (max-width: 600px) {
-    .about_website{
+    .about_website {
         margin-top: 0;
         padding-left: 8%;
     }
 
-    .title{
+    .title {
         font-size: 2.5em;
     }
 
@@ -173,6 +185,55 @@ It might just not translate well for phone the way i made the site*/
     }
 
 }
+
+
+/*About me*/
+.subtitle {
+    text-align: center;
+    font-size: 3em;
+}
+
+
+.about_me {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 500px auto;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.myImage {
+    object-fit: cover;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+
+/*about me text*/
+.me_object2 {
+    padding-left: 10px;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    margin-right: 20px;
+    box-shadow: 5px 10px 10px #011632;
+}
+
+.about_text_litteraly {
+    color: crimson;
+    font-family: Arial;
+}
+
+.me {
+    font-size: 3em;
+    font-family: Arial;
+
+}
+
+
+
+
+
 
 
 
