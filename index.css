@@ -19,7 +19,9 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.5em;
+    transition-duration: 0.7s;
+
 }
 
 
@@ -33,13 +35,14 @@ body {
 }
 
 .dropdown .dropbtn {
-    font-size: 17px;
+    font-size: 1.4em;
     border: none;
     outline: none;
     color: black;
     padding: 14px 16px;
     margin: 0;
     background-color: bisque;
+    transition-duration: 0.7s;
 
 }
 
@@ -49,6 +52,7 @@ body {
     background-color: #fae0f7;
     min-width: 160px;
     z-index: 1;
+    transition-duration: 0.7s;
 }
 
 .dropContent a {
@@ -63,11 +67,13 @@ body {
 .nav a:hover, .dropdown:hover .dropbtn {
     background-color: rgb(255, 201, 234);
     color: black;
+    transition-duration: 0.7s;
 }
 
 .dropContent a:hover {
     background-color: rgb(255, 201, 234);
     color: black;
+    transition-duration: 0.7s;
 }
 
 .dropdown:hover .dropContent {
@@ -86,6 +92,7 @@ body {
     .nav a.icon {
         float: right;
         display: block;
+        font-size: 1.2em;
     }
 }
 
