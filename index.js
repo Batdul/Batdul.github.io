@@ -6,4 +6,4 @@ function myFunction() {
   } else {
     x.className = "nav";
   }
-}
+}//burger icon pressed or not
