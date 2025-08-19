@@ -2,7 +2,7 @@ const canvas = document.getElementById("canvas");
 canvas.width = 883;
 canvas.height = 550;
 
-const initialColor = "#f1f1f1"
+const initialColor = "#f1f1f1";
 
 let context = canvas.getContext("2d");
 context.fillStyle = initialColor;
@@ -11,7 +11,7 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 //base values that can change
 let drawColor = "black";
 let drawWidth = 2;
-let drawOpacity = 1;
+let tool = "pen";
 
 let drawHistory = [];
 let index = -1;
@@ -37,20 +37,34 @@ function start(event) {
 }
 
 function draw(event) {
-    if (isDrawing == true) {
-        context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
-        context.strokeStyle = drawColor;
-        context.lineWidth = drawWidth;
-        context.globalAlpha = drawOpacity;
-        context.lineCap = "round";
-        context.linJoin = "round";
-        context.miterLimit = 2; //prevent ugly spikes. works by limiting sharp corners or smth
-        context.stroke();
+    if (tool === "pen") {
+        if (isDrawing == true) {
+            context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+            context.strokeStyle = drawColor;
+            context.lineWidth = drawWidth;
+            context.lineCap = "round";
+            context.linJoin = "round";
+            context.miterLimit = 2; //prevent ugly spikes. works by limiting sharp corners or smth
+            context.stroke();
+        }
+    }
+
+    if (tool === "eraser") {
+        if (isDrawing == true) {
+            context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+            context.strokeStyle = initialColor;
+            context.lineWidth = drawWidth;
+            context.lineCap = "round";
+            context.linJoin = "round";
+            context.miterLimit = 2; //prevent ugly spikes. works by limiting sharp corners or smth
+            context.stroke();
+        }
     }
 
     event.preventDefault();
 
 }
+
 
 function stop(event) {
     if (isDrawing == true) {
@@ -91,9 +105,35 @@ function undoLast() {
     }
 }
 
-function opacityChange() {
-    let opacity = document.getElementById("chosenOpacity").value;
+function penTool() {
+    let pen = document.getElementById("penButton");
+    let eraser = document.getElementById("eraserButton");
 
-    drawOpacity = opacity/100;
+    tool = "pen"
 
+    pen.style.backgroundColor = "#011632";
+    pen.style.color = "white";
+
+    eraser.style.backgroundColor = "#f1f1f1";
+    eraser.style.color = "black";
+
+}
+
+function eraserTool() {
+    let eraser = document.getElementById("eraserButton");
+    let pen = document.getElementById("penButton");
+
+    tool = "eraser";
+
+    pen.style.backgroundColor = "#f1f1f1";
+    pen.style.color = "black";
+
+    eraser.style.backgroundColor = "#011632";
+    eraser.style.color = "white";
+}
+
+function download() {
+    let download = document.getElementById("download");
+    let img = canvas.toDataURL("image/png")
+    download.setAttribute("href", img);
 }
