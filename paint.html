@@ -47,30 +47,41 @@
 
             <div class="tools">
 
-                <div class="colorChoice">
+                <div class="toolSection">
                     <h1>Select Color</h1>
-                    <input type="color"  id="chosenColor" class="color-picker" oninput="colorChange()">
+                    <input type="color" id="chosenColor" class="color-picker" oninput="colorChange()">
                 </div>
 
-                <div class="widthChoice">
-                        <h1>Select Pen Width</h1>
-                    <input type="range" min="1" max="100" id="chosenWidth" class="penWidth" oninput="drawWidth = this.value;">
+                <div class="toolSection">
+                    <h1>Select Pen Width</h1>
+                    <input type="range" min="1" max="100" id="chosenWidth" class="penWidth"
+                        oninput="drawWidth = this.value;">
                 </div>
 
-                <div class="opacityChoice">
-                    <h1>Select Opacity</h1>
-                    <input type="range" min="0" max="100" id="chosenOpacity" class="opacity" oninput="opacityChange()">
+
+                <div class="toolSection">
+                    <h1>Select Tool</h1>
+                    <button class="toolButton" id="penButton" onclick="penTool()">Pen</button>
+                    <button class="toolButton" id="eraserButton" onclick="eraserTool()">Eraser</button>
                 </div>
 
-                <div class="buttons">
-                    <button onclick="undoLast()">Undo</button>
-                    <button onclick="clearCanvas()">Clear</button>
+                <div class="otherSection">
+                    <h1></h1>
+                    <button class="toolButton" class="otherButton" onclick="undoLast()">Undo</button>
+                    <button class="toolButton" class="otherButton" onclick="clearCanvas()">Clear</button>
+                </div>
+
+                <div>
+                    <a id="download" download="Drawing">
+                        <button class="toolButton" type="button" onClick="download()">Download</button>
+                    </a>
                 </div>
             </div>
 
 
-
-            <canvas id="canvas"></canvas>
+            <div>
+                <canvas id="canvas"></canvas>
+            </div>
 
         </div>
 
