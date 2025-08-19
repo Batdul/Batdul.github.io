@@ -35,7 +35,8 @@ body {
 }
 
 .dropdown .dropbtn {
-    font-size: 1.4em;
+    font-family: 'Times New Roman';
+    font-size: 1.5em;
     border: none;
     outline: none;
     color: black;
@@ -64,7 +65,8 @@ body {
     text-align: left;
 }
 
-.nav a:hover, .dropdown:hover .dropbtn {
+.nav a:hover,
+.dropdown:hover .dropbtn {
     background-color: rgb(255, 201, 234);
     color: black;
     transition-duration: 0.7s;
@@ -92,7 +94,6 @@ body {
     .nav a.icon {
         float: right;
         display: block;
-        font-size: 1.2em;
     }
 }
 
@@ -245,7 +246,7 @@ It might just not translate well for phone the way i made the site*/
     .about_me {
         grid-template-columns: auto;
     }
-    
+
 }
 
 
@@ -270,3 +271,33 @@ It might just not translate well for phone the way i made the site*/
     text-decoration: none;
     color: black;
 }
+
+
+
+/*paint programme*/
+
+
+.container {
+    margin-top: 20px;
+    margin-left: 2%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 10px;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.color-picker {
+    width: 100%;
+    height: 50px;
+}
+
+#canvas {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
