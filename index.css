@@ -281,7 +281,7 @@ It might just not translate well for phone the way i made the site*/
     margin-top: 20px;
     margin-left: 2%;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 24% 75%;
     gap: 10px;
 }
 
@@ -289,6 +289,7 @@ It might just not translate well for phone the way i made the site*/
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
 }
 
 .color-picker {
@@ -301,3 +302,42 @@ It might just not translate well for phone the way i made the site*/
     cursor: pointer;
 }
 
+.toolSection {
+    padding: 10px;
+    padding-right: 5px;
+    padding-top: 0;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    margin-right: 10px;
+    box-shadow: 5px 10px #011632;
+    
+}
+
+.toolButton {
+    background-color: #f1f1f1;
+    border: 2px solid#011632;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    font-size: 1.5em;
+
+}
+
+
+#penButton {
+    background-color: #011632;
+    color: white;
+}
+
+.toolButton:hover {
+    background-color: #011632;
+    border: 2px solid #011632;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #454545;
+    transition-duration: 0.5s;
+}
+
+
+@media screen and (max-width: 600px) {}
