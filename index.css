@@ -310,7 +310,7 @@ It might just not translate well for phone the way i made the site*/
     border-radius: 15px;
     margin-right: 10px;
     box-shadow: 5px 10px #011632;
-    
+
 }
 
 .toolButton {
@@ -340,4 +340,50 @@ It might just not translate well for phone the way i made the site*/
 }
 
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: auto;
+
+    }
+
+}
+
+
+/*Flappy bird css*/
+
+.wholeFlappyGame {
+    margin-top: 20px;
+    background: #87ceeb;
+}
+
+.flappyDetails {
+    color: #55230f;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 15px 22px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#flappyCanvas {
+    cursor: pointer;
+}
+
+#startButton {
+    background-color: aquamarine;
+    border: 2px solid rgb(39, 184, 136);
+    font-size: 1.5em;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    color: #55230f;
+
+}
+
+#startButton:hover {
+    background-color: rgb(84, 168, 140);
+    border: 2px solid rgb(39, 184, 136);
+    box-shadow: 3px 3px 5px #645a56;
+    transition-duration: 0.5s;
+}
