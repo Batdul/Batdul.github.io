@@ -15,7 +15,7 @@
 </head>
 
 
-<body onload="myfunction()">
+<body>
     <header>
         <div class="nav" id="myNav">
             <a href="index.html" class="item">Home</a>
@@ -24,7 +24,7 @@
                 <button class="dropbtn">Games</button>
                 <div class="dropContent">
                     <a href="paint.html">Paint</a>
-                    <a href="#game2">Dots and Boxes</a>
+                    <a href="flappy.html">Flappy Bird</a> 
                     <a href="#game3">Hangman</a>
                     <a href="#game4">Avatar Creation</a>
                 </div>
@@ -35,7 +35,6 @@
             <a href="#contact" class="item">Contact Me</a>
 
 
-            <!--apparament c le icon de hamburger navbar-->
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
 
@@ -73,8 +72,10 @@
 
                 <div>
                     <a id="download" download="Drawing">
-                        <button class="toolButton" type="button" onClick="download()">Download</button>
+                        <button class="toolButton" onClick="download()">Download</button>
                     </a>
+                    <button class="toolButton" onclick="alignMobile()">Mobile size</button>
+                    <button class="toolButton" onclick="alignNormal()">Original size</button>
                 </div>
             </div>
 
