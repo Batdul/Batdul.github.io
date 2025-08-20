@@ -1,31 +1,12 @@
 const canvas = document.getElementById("canvas");
-
-let canvasWidth = 883;
-let canvasHeight = 550;
-
-canvas.width = canvasWidth;
-canvas.height = canvasHeight;
+canvas.width = 883;
+canvas.height = 550;
 
 const initialColor = "#f1f1f1";
 
 let context = canvas.getContext("2d");
 context.fillStyle = initialColor;
 context.fillRect(0, 0, canvas.width, canvas.height);
-
-function alignMobile() {
-    canvas.width = 370;
-    canvas.height = 500;
-    context.fillStyle = initialColor;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-
-}
-
-function alignNormal() {
-    canvas.width = 883;
-    canvas.height = 550;
-    context.fillStyle = initialColor;
-    context.fillRect(0, 0, canvas.width, canvas.height);
-}
 
 //base values that can change
 let drawColor = "black";
@@ -42,8 +23,6 @@ canvas.addEventListener("touchmove", draw, false);
 canvas.addEventListener("mousedown", start, false);
 canvas.addEventListener("mousemove", draw, false);
 
-
-
 canvas.addEventListener("touchend", stop, false);
 canvas.addEventListener("mouseup", stop, false);
 canvas.addEventListener("mouseout", stop, false);
@@ -52,8 +31,7 @@ canvas.addEventListener("mouseout", stop, false);
 function start(event) {
     isDrawing = true;
     context.beginPath();
-    //context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
-    context.lineTo(getX(event), getY(event));
+    context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
 
     event.preventDefault();
 }
@@ -61,21 +39,19 @@ function start(event) {
 function draw(event) {
     if (tool === "pen") {
         if (isDrawing == true) {
-            //context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
-            context.lineTo(getX(event), getY(event));
+            context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
             context.strokeStyle = drawColor;
             context.lineWidth = drawWidth;
             context.lineCap = "round";
             context.linJoin = "round";
-            context.miterLimit = 1; //prevent ugly spikes. works by limiting sharp corners or smth
+            context.miterLimit = 2; //prevent ugly spikes. works by limiting sharp corners or smth
             context.stroke();
         }
     }
 
     if (tool === "eraser") {
         if (isDrawing == true) {
-            //context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
-            context.lineTo(getX(event), getY(event));
+            context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
             context.strokeStyle = initialColor;
             context.lineWidth = drawWidth;
             context.lineCap = "round";
@@ -85,28 +61,8 @@ function draw(event) {
         }
     }
 
-
     event.preventDefault();
-}
 
-
-function getX(event) {
-    if (event.pageX == undefined) {
-        return event.targetTouches[0].pageX - canvas.offsetLeft
-    }
-    else {
-        return event.pageX - canvas.offsetLeft
-    }
-}
-
-
-function getY(event) {
-    if (event.pageY == undefined) {
-        return event.targetTouches[0].pageY - canvas.offsetTop
-    }
-    else {
-        return event.pageY - canvas.offsetTop
-    }
 }
 
 
@@ -174,11 +130,7 @@ function eraserTool() {
 
     eraser.style.backgroundColor = "#011632";
     eraser.style.color = "white";
-
 }
-
-
-
 
 function download() {
     let download = document.getElementById("download");
