@@ -349,41 +349,32 @@ It might just not translate well for phone the way i made the site*/
 }
 
 
-/*Flappy bird css*/
+/*Dots and boxes css*/
+#mineSweeperGrid {
 
-.wholeFlappyGame {
-    margin-top: 20px;
-    background: #87ceeb;
+    margin: 20px;
+display: grid;
+grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 }
 
-.flappyDetails {
-    color: #55230f;
-    font-size: 1.2em;
-    font-weight: 500;
-    padding: 15px 22px;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-#flappyCanvas {
+.cell {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
     cursor: pointer;
+    background-color: #9f9f9f;
 }
 
-#startButton {
-    background-color: aquamarine;
-    border: 2px solid rgb(39, 184, 136);
-    font-size: 1.5em;
-    border-radius: 20px;
-    transition-duration: 0.5s;
-    cursor: pointer;
-    color: #55230f;
-
+.revealed {
+    background-color: #f1f1f1;
 }
 
-#startButton:hover {
-    background-color: rgb(84, 168, 140);
-    border: 2px solid rgb(39, 184, 136);
-    box-shadow: 3px 3px 5px #645a56;
-    transition-duration: 0.5s;
+.mine {
+    background-color: yellow;
+
+    color: red;
 }
