@@ -1,1 +1,0 @@
-//canvas left, key pressed for laptop then add bigg letters in red on right, key buttons for phones
