@@ -349,32 +349,257 @@ It might just not translate well for phone the way i made the site*/
 }
 
 
-/*Dots and boxes css*/
-#mineSweeperGrid {
 
-    margin: 20px;
-display: grid;
-grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-}
+/*avatar creation css*/
 
-.cell {
-    width: 30px;
-    height: 30px;
-    border: 2px solid black;
-    display: inline-block;
+
+.avatarTitle {
     text-align: center;
-    vertical-align: middle;
-    font-size: 20px;
+    margin: 15px;
+}
+
+.avatarContainer {
+    margin-top: 20px;
+    margin-left: 2%;
+    display: grid;
+    grid-template-columns: 883px 25%;
+    gap: 20px;
+}
+
+
+
+/*left side*/
+
+.maleButton {
+    border: 2px solid darkblue;
+    background-color: skyblue;
+    border-radius: 15px;
+    font-size: 1.2em;
+    transition-duration: 0.5s;
+    color: black;
     cursor: pointer;
-    background-color: #9f9f9f;
 }
 
-.revealed {
+.maleButton:hover {
+    background-color: darkblue;
+    box-shadow: 5px 5px 5px #0000324D;
+    transition-duration: 0.5s;
+    color: white;
+}
+
+.femaleButton {
+    border: 2px solid rgb(135, 66, 78);
+    background-color: pink;
+    border-radius: 15px;
+    font-size: 1.2em;
+    transition-duration: 0.5s;
+    color: black;
+    cursor: pointer;
+}
+
+.femaleButton:hover {
+    background-color: rgb(135, 66, 78);
+    box-shadow: 5px 5px 5px #3c1e234d;
+    color: white;
+    transition-duration: 0.5s;
+
+}
+
+#girlButton {
+    background-color: rgb(135, 66, 78);
+    color: white;
+}
+
+#name {
+    border-radius: 15px;
+    margin-top: 5px;
+}
+
+.avatarId {
+    background-color: #c2c2c2;
+    padding: 5px;
+}
+
+.gender {
+    gap: 15px;
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#name {
+    float: right;
+    width: 80%;
+}
+
+/*right side*/
+.componentSection {
     background-color: #f1f1f1;
+    box-shadow: 5px 10px #011632;
+    border-radius: 15px;
 }
 
-.mine {
-    background-color: yellow;
+.clothingButtons {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
 
-    color: red;
+.imageContainer {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: -5px -10px;
+    background-color: #c2c2c2;
+    border-radius: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.backgroundSection {
+    margin-left: 10px;
+}
+
+.backgroundText {
+    font-size: 2em;
+}
+
+.clotheButtons, .backButtons {
+    background-color: #f1f1f1;
+    border: 2px solid#011632;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    font-size: 1.2em;
+}
+
+.clotheButtons:hover, .backButtons:hover {
+    background-color: #011632;
+    border: 2px solid #011632;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #454545;
+    transition-duration: 0.5s;
+}
+
+#shirtButton {
+    background-color: #011632;
+    color: white;
+}
+
+
+
+#backgroundColor {
+    width: 90%;
+}
+
+
+/*preuve jai essyaer de rendre responsive*/
+/*
+@media screen and (max-width: 1200px) {
+    .avatarContainer {
+        grid-template-columns: auto;
+
+    }
+
+    #avatarCanvas {
+        object-fit: contain;
+        transform: rotate(90deg);
+        display: block;
+    }
+
+    #backgroundColor {
+        width: 60%;
+    }
+
+    .clotheButtons{
+        font-size: 2em;
+    }
+
+    .clothingButtons {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .maleButton, .femaleButton {
+        font-size: 2em;
+    }
+
+    #name {
+        height: 20px;
+    }
+
+    #clothingitems {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .avatarContainer {
+        grid-template-columns: auto;
+
+    }
+
+    #avatarCanvas {
+
+        object-fit: contain;
+    }
+
+    #backgroundColor {
+        width: 60%;
+    }
+
+    .clotheButtons{
+        font-size: 2em;
+    }
+
+    .clothingButtons {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .maleButton, .femaleButton {
+        font-size: 2em;
+    }
+
+    #name {
+        height: 20px;
+    }
+
+    #clothingitems {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}*/
+
+/*Color game css*/
+
+.colorGame {
+    text-align: center;
+}
+
+#initialColor, #guessedColor {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 50%;
+    height: 20%;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: red;
+}
+
+.inputGuess {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
