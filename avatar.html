@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 
-    <script src="avatar.js"></script>
+    <script src="avatar.js" defer></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
                 <button class="dropbtn">Games</button>
                 <div class="dropContent">
                     <a href="paint.html">Paint</a>
-                    <a href="hangman.html">Hangman</a>
+                    <a href="colorGuess.html">Color Guesser</a>
                     <a href="avatar.html">Avatar Creation</a>
                 </div>
             </div>
@@ -44,43 +44,62 @@
 
 
     <main>
-    
-        <div>
-            <div>
-                <div>
-                    <button class="maleButton"><i class="fa fa-mars"></i></button>
-                    <button class="femaleButton"><i class="fa fa-venus"></i></button>
-                </div>
+        <h1 class="avatarTitle">Create your own avatar</h1>
+        <h3 class="avatarTitle">
+            DISCLAIMER:
+            <br>
+            Avatar Creation is designed for desktop use and may not render
+            properly on mobile phones or tablets. We recommend using a larger screen for
+            optimal functionality and display.
+        </h3>
+        <div class="avatarContainer">
 
-                <div>
-                    <input type="text" placeholder="Give them a name"> 
+            <section class="avatarSection">
+                <div class="avatarId">
+                    <span class="gender">
+                        <button class="maleButton" onclick="setgenderMale()" id="boyButton"><i
+                                class="fa fa-mars"></i></button>
+                        <button class="femaleButton" onclick="setgenderFemale()" id="girlButton"><i
+                                class="fa fa-venus"></i></button>
+                    </span>
+
+                    <input type="text" placeholder="Give them a name" id="name">
                     <!--make download button and input is downlad name-->
                 </div>
-            </div>
 
 
-            <canvas id="avatarCanvas"></canvas>
-        </div>
+                <canvas id="avatarCanvas"></canvas>
 
 
-        <div>
-            <div>
-                <button>Hair</button>
-                <button>Pants</button>
-                <button>Shirts</button>
-            </div>
+                <a id="download" download="Avatar">
+                    <button class="toolButton" onClick="download()">Download</button>
+                </a>
+            </section>
 
-            <div id="clothing items">
-                <div></div>
-                <div></div>
-            </div>
 
-            <div>
-                <p>Backgrounds :</p>
-                <button>Summer</button>
-                <button>Winter</button>
-                <button>Night Time</button>
-            </div>
+            <section class="componentSection">
+                <div class="clothingButtons">
+                    <button onclick="showShirts()" class="clotheButtons" id="shirtButton">Shirts</button>
+                    <button onclick="showPants()" class="clotheButtons" id="pantButton">Pants</button>
+                    <button onclick="showHair()" class="clotheButtons" id="hairButton">Hair</button>
+                </div>
+
+                <div id="clothingitems">
+                    <img src="fShirt1.png" alt="female shirt 1" class="imageContainer" id="image1">
+
+                    <img src="fShirt2.png" alt="female shirt 2" class="imageContainer" id="image2">
+                </div>
+
+                <div class="backgroundSection">
+                    <p class="backgroundText">Backgrounds :</p>
+                    <button id="summerCore" onclick="summer()" class="backButtons">Summer</button>
+                    <button id="winterCore" onclick="winter()" class="backButtons">Winter</button>
+                    <button id="nightCore" onclick="night()" class="backButtons">Night Time</button>
+                    <input type="color" id="backgroundColor" oninput="mattColor()">
+
+
+                </div>
+            </section>
         </div>
     </main>
 
@@ -136,6 +155,44 @@
         </p>
 
     </footer>
+
+
+
+    <!--images to be used in js-->
+    <div style="display: none;">
+        <!--backgrounds-->
+        <img src="summer.jpg" id="summerImg">
+        <img src="winter.jpg" id="winterImg">
+        <img src="night.jpg" id="nightImg">
+
+        <!--female images-->
+        <!--avatar-->
+        <img src="fAvatar.png" id="fAvatar">
+        <!--shirt-->
+        <img src="fShirt1.png" id="fShirt1">
+        <img src="fShirt2.png" id="fShirt2">
+        <!--pant-->
+        <img src="fPant1.png" id="fPant1">
+        <img src="fPant2.png" id="fPant2">
+        <!--hair-->
+        <img src="fHair1.png" id="fHair1">
+        <img src="fHair2.png" id="fHair2">
+
+
+        <!--Male images-->
+        <!--avatar-->
+        <img src="mAvatar.png" id="mAvatar">
+        <!--shirt-->
+        <img src="mShirt1.png" id="mShirt1">
+        <img src="mShirt2.png" id="mShirt2">
+        <!--pant-->
+        <img src="mPant1.png" id="mPant1">
+        <img src="mPant2.png" id="mPant2">
+        <!--hair-->
+        <img src="mHair1.png" id="mHair1">
+        <img src="mHair2.png" id="mHair2">
+
+    </div>
 </body>
 
 </html>
