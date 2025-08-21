@@ -135,7 +135,7 @@ function clearCanvas() {
 
 function colorChange() {
     let color = document.getElementById("chosenColor").value;
-    drawColor = color; //je sais que jaurait pu mettre ca direct dans html mais je prefere ca
+    drawColor = color;
 }
 
 
