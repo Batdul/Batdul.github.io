@@ -464,7 +464,8 @@ It might just not translate well for phone the way i made the site*/
     font-size: 2em;
 }
 
-.clotheButtons, .backButtons {
+.clotheButtons,
+.backButtons {
     background-color: #f1f1f1;
     border: 2px solid#011632;
     color: black;
@@ -474,7 +475,8 @@ It might just not translate well for phone the way i made the site*/
     font-size: 1.2em;
 }
 
-.clotheButtons:hover, .backButtons:hover {
+.clotheButtons:hover,
+.backButtons:hover {
     background-color: #011632;
     border: 2px solid #011632;
     color: white;
@@ -581,20 +583,31 @@ It might just not translate well for phone the way i made the site*/
     }
 }*/
 
+
+
 /*Color game css*/
 
 .colorGame {
     text-align: center;
 }
 
-#initialColor, #guessedColor {
+.colorShow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#initialColor,
+#guessedColor {
     margin: 0 auto;
     margin-bottom: 15px;
-    width: 50%;
-    height: 20%;
+    width: 400px;
+    height: 200px;
     border: 2px solid black;
     border-radius: 15px;
-    background-color: red;
+    background-color: #f1f1f1;
 }
 
 .inputGuess {
@@ -602,4 +615,74 @@ It might just not translate well for phone the way i made the site*/
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.colorTitle {
+    font-size: 2em;
+}
+
+
+.buttonsColors {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.changeButton,
+.sendButton {
+    padding: 1em 2em;
+    border-radius: 1000px;
+    border: none;
+    color: black;
+    background-color: #f1f1f1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+
+.changeButton::after {
+    content: '';
+    position: absolute;
+    height: 48px;
+    width: 142px;
+    border-radius: 1000px;
+    background-image: linear-gradient(to bottom right, #008cff, #e100ff);
+    z-index: -1;
+}
+
+.sendButton::after {
+    content: '';
+    position: absolute;
+    height: 48px;
+    width: 98px;
+    border-radius: 1000px;
+    background-image: linear-gradient(to bottom right, #008cff, #e100ff);
+    z-index: -1;
+
+
+}
+
+.changeButton:hover,
+.sendButton:hover {
+    z-index: 0;
+    box-shadow: 5px 5px 5px #454545;
+    color: white;
+    transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+    .colorShow {
+        flex-direction: column;
+    }
+
+    #guessedColor,
+    #initialColor {
+        width: 300px;
+        height: 100px;
+    }
 }
