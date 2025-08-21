@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 
-    <script src="colorGuess.html"></script>
+    <script src="colorGuess.js" defer></script>
 
 
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body onload="showColor()">
     <header>
         <div class="nav" id="myNav">
             <a href="index.html" class="item">Home</a>
@@ -44,32 +44,45 @@
 
     <main>
         <section class="colorGame">
-            <h1>Color Guesser</h1>
+            <h1 class="colorTitle">Color Guesser</h1>
 
             <div class="colorShow">
-                <div id="initialColor"></div>
-                <div id="guessedColor"></div>
+                <div>
+                    <h2>Guess this color</h2>
+                    <div id="initialColor"></div>
+                </div>
+
+                <div>
+                    <h2 id="answer">Your color</h2>
+                    <div id="guessedColor"></div>
+                </div>
+            </div>
+
+            <div class="buttonsColors">
+                <button onclick="showColor()" class="changeButton">Change Color</button>
+                <button onclick="evaluateGuess()" class="sendButton">Guess</button>
             </div>
 
 
             <div class="inputGuess">
                 <div>
                     <h2>Red</h2>
-                    <input type="range" min="0" max="255" id="red">
+                    <input type="range" min="0" max="255" id="red" oninput="showGuess()">
                 </div>
 
 
                 <div>
                     <h2>Green</h2>
-                    <input type="range" min="0" max="255" id="green">
+                    <input type="range" min="0" max="255" id="green" oninput="showGuess()">
                 </div>
 
 
                 <div>
                     <h2>Blue</h2>
-                    <input type="range" min="0" max="255" id="blue">
+                    <input type="range" min="0" max="255" id="blue" oninput="showGuess()">
                 </div>
             </div>
+
 
         </section>
 
