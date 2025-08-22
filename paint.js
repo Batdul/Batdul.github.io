@@ -61,7 +61,6 @@ function start(event) {
 function draw(event) {
     if (tool === "pen") {
         if (isDrawing == true) {
-            //context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
             context.lineTo(getX(event), getY(event));
             context.strokeStyle = drawColor;
             context.lineWidth = drawWidth;
@@ -74,13 +73,12 @@ function draw(event) {
 
     if (tool === "eraser") {
         if (isDrawing == true) {
-            //context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
             context.lineTo(getX(event), getY(event));
             context.strokeStyle = initialColor;
             context.lineWidth = drawWidth;
             context.lineCap = "round";
             context.linJoin = "round";
-            context.miterLimit = 2; //prevent ugly spikes. works by limiting sharp corners or smth
+            context.miterLimit = 1; //prevent ugly spikes. works by limiting sharp corners or smth
             context.stroke();
         }
     }
@@ -176,6 +174,8 @@ function eraserTool() {
     eraser.style.color = "white";
 
 }
+
+
 
 
 
